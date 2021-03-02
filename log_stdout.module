@@ -1,0 +1,25 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function log_stdout_help($route_name, RouteMatchInterface $route_match)
+{
+  $output = "";
+
+  switch ($route_name) {
+    case 'help.page.log_stdout':
+      $output = "";
+      $output .= '<p>' . t("Please note that this module doesn't interfere with Database Logging.") . '<br>'
+        . t("Once installed, no configuration is required.") . '</p>';
+      $output .= '<p>' . t("If your project stack includes Docker, access your server logs via the following command:") . '<br>'
+        . '<code>' . t("docker logs -f my_web_container") . '</code>' . '</p>';
+      $output .= '<p>' . t("Provoke an intended warning (by requesting a page that doesn't exist for instance) and look into the logs for a JSON formatted entry that resembles something like:") . '<br>'
+        . '<code>' . "{\"severity\":\"WARNING\",\"type\":\"page not found\",\"message\":\"\/non-existing-page\",\"user\":\"admin\",\"request_uri\":\"http:\/\/localhost\/non-existing-page\",\"json_format\":\"true\"}" . '</code>' . '</p>';
+      return $output;
+  }
+
+  return $output;
+}

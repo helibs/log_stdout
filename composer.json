@@ -1,0 +1,12 @@
+{
+  "name": "helibs/log_stdout",
+  "description": "Send log messages towards php://stdout or php://stderr for better handling with Docker and in order to route them towards Kibana.",
+  "version": "1.0",
+  "authors": [
+    {
+      "name": "Renaud Cavadaski",
+      "email": "renaud.cavadaski@mydropteam.com"
+    }
+  ],
+  "type": "drupal-custom-module"
+}

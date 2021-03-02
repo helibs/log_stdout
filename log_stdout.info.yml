@@ -1,0 +1,7 @@
+name: Log stdout
+description: Send log messages towards php://stdout or php://stderr for better handling with Docker and in order to route them towards Kibana.
+package: HERMES
+type: module
+version: '8.x-2.5'
+core: 8.x
+core_version_requirement: ^8 || ^9
